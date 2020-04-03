@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{%block home_container%}
+
+<form action = "/process_request" method = "post" enctype="multipart/form-data">
+
+    <div class = 'prot-name-input' style="text-align:center;">
+        <input id="prot-name-input" type = "text" name="pnamein" placeholder = "Enter Uniprot ID Here" align="middle"><br>
+    </div>
+    <div class = 'prot-name-input' style="text-align:center;">
+        <input id="prot-name-input" type = "text" name="pnamein" placeholder = "Enter Uniprot ID Here" align="middle"><br>
+    </div>
+    <div class = 'submit-button' align="middle">
+        <input type="hidden" id="token" name="token" value="{{usertoken}}">
+        <input id="submit" type = "submit" value="Render Graph"><br>
+    </div>
+
+</form>
+{% endblock %}

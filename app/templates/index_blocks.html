@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block home_container %}
+
+{% if not_free %}
+    <h1>We're sorry, only free food is allowed here.</h1>
+{% endif %}
+
+<div class='event-container'>
+    <a href="/beginsubmit"><img id="post_new" src="static/web_asset/image/post_ff.jpg"></a><br>
+    <img id="post_new" src="static/web_asset/image/example.png"><br>
+    <img id="post_new" src="static/web_asset/image/template/template_skya.jpg"><br>
+    <img id="post_new" src="static/web_asset/image/template/template_skyb.jpg"><br>
+    <img id="post_new" src="static/web_asset/image/template/template_skyc.jpg"><br>
+    <img id="post_new" src="static/web_asset/image/template/template_skye.jpg"><br>
+    <img id="post_new" src="static/web_asset/image/template/template_skyf.jpg"><br>
+    <img id="post_new" src="static/web_asset/image/template/template_skyh.jpg"><br>
+    <img id="post_new" src="static/web_asset/image/template/template_skyi.jpg"><br>
+</div>
+
+{% endblock %}

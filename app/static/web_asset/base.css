@@ -1,0 +1,79 @@
+ body {
+  background-image: url("image/background.png");
+     background-color: black;
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+     background-position: center;
+     background-size: cover;
+}
+
+h1 {
+    text-align: center;
+  color: whitesmoke;
+  margin-left: 20px;
+}
+
+
+@media only screen and (min-width: 500px) {
+    /* styles for wide screens */
+    /* styles for MacBook Pro-sized screens and larger */
+    .logo-container {
+    text-align: center;
+    align-content: center;
+    height: 250px;
+    }
+    .logo-container img{
+    width: 50%;
+    max-width: 100%;
+    }
+    .post-container {
+    text-align: center;
+    align-content: center;
+    height: 200px;
+    }
+    .post-container img{
+
+    }
+    .event-container{
+        text-align: center;
+        align-content: center;
+        width: auto;
+        height: 100px;
+    }
+    .event-container img{
+    height: 100%
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    /* styles for narrow screens */
+    .logo-container {
+    text-align: center;
+    align-content: center;
+    max-height: 300px;
+    }
+    .logo-container img{
+    width: 75%;
+    max-width: 100%;
+    }
+        .post-container {
+    text-align: center;
+    align-content: center;
+    height: 200px;
+    }
+    .post-container img{
+
+    }
+    .event-container{
+        text-align: center;
+        align-content: center;
+        width: auto;
+        height: 150px;
+    }
+    .event-container img{
+    height: 100%
+    }
+}
+
+
