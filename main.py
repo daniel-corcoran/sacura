@@ -4,11 +4,11 @@ os.environ['GLOG_minloglevel'] = '2'
 from flask import *
 from flask import render_template
 from flask_googlemaps import GoogleMaps
-from flask_googlemaps import Map
+#from flask_googlemaps import Map
 from flask import request
 from app import app
 from waitress import serve
-GoogleMaps(app, key="AIzaSyC7mDYbvnmQCBDIgkcXthbmwAT2WVSN0jE")
+#GoogleMaps(app, key="AIzaSyC7mDYbvnmQCBDIgkcXthbmwAT2WVSN0jE")
 
 
 def begin_submit_step3():
@@ -18,7 +18,7 @@ def begin_submit_step3():
 @app.route('/process_request', methods=['POST'])
 def process_input():
     #Sanitize user input and add to SQL table
-    ...
+    print(request.form)
     return home_page()
 
 @app.route('/beginsubmitB', methods=['POST'])

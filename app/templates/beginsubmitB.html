@@ -3,15 +3,15 @@
 
 <form action = "/process_request" method = "post" enctype="multipart/form-data">
 
-    <div class = 'prot-name-input' style="text-align:center;">
-        <input id="prot-name-input" type = "text" name="pnamein" placeholder = "Enter Uniprot ID Here" align="middle"><br>
+    <div class = 'food-description-input' style="text-align:center;">
+        <input id="food-description-input" type = "text" name="food-description-input" placeholder = "What sort of food?" align="middle"><br>
     </div>
     <div class = 'prot-name-input' style="text-align:center;">
-        <input id="prot-name-input" type = "text" name="pnamein" placeholder = "Enter Uniprot ID Here" align="middle"><br>
+        <input id="prot-name-input" type = "text" name="location-description-input" placeholder = "Where is it located?" align="middle"><br>
     </div>
     <div class = 'submit-button' align="middle">
         <input type="hidden" id="token" name="token" value="{{usertoken}}">
-        <input id="submit" type = "submit" value="Render Graph"><br>
+        <input id="submit" type = "submit" value="Submit food report"><br>
     </div>
 
 </form>
