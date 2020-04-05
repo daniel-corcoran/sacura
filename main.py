@@ -10,6 +10,9 @@ from profanityfilter import ProfanityFilter
 import datetime
 import random
 import sqlite3
+import geoip2.database
+
+reader = geoip2.database.Reader('GeoLite2-City.mmdb')
 
 os.environ['GLOG_minloglevel'] = '2'
 
@@ -199,12 +202,24 @@ def begin_submit():
     return render_template("beginsubmit.html")
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def home_page(not_free=False):
-    print("User has accessed home page.")
-    return render_template("index_blocks.html", not_free=not_free)
-
-
+    user_ip_address = request.environ['REMOTE_ADDR']
+    print(user_ip_address)
+    if user_ip_address == '127.0.0.1':
+        bypass = True
+    else:
+        bypass = False
+        response = reader.city(user_ip_address)
+    if bypass or response.city.names['en'] == 'Cincinnati':
+        print("User has accessed home page.")
+        return render_template("index_blocks.html", not_free=not_free)
+    else:
+        print("User does not fall in geofence.")
+        print(user_ip_address)
+        print(response.city.names['en'])
+        print("Sending to geofence warning.")
+        return render_template("geofence_warning.html", loc = response.city.names['en'], ip=user_ip_address)
 if __name__ == '__main__':
 
     print("Server program has begin. Beginning service.")
