@@ -2,17 +2,16 @@
   background-image: url("image/background.png");
      background-color: black;
      background-repeat: no-repeat;
-  background-attachment: fixed;
+     background-attachment: fixed;
      background-position: center;
      background-size: cover;
 }
 
 h1 {
     text-align: center;
-  color: whitesmoke;
-  margin-left: 20px;
+    color: whitesmoke;
+    margin-left: 20px;
 }
-
 
 @media only screen and (min-width: 550px) {
     /* styles for MacBook Pro-sized screens and larger */
@@ -42,7 +41,7 @@ h1 {
         align-content:      center;
     }
     .logo-container img{
-        width:              100%; /*stretch to fit entire width of screen.*/
+        width:              100%;
     }
     .event-container{
         text-align:         center;

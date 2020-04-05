@@ -3,6 +3,23 @@
 
 <form action = "/process_request" method = "post" enctype="multipart/form-data">
 
+{% if time == True %}
+    <h1>Event duration must be a number between 0.5 and 4 (hours). Please try again.</h1>
+{% endif %}
+{% if profanity == True %}
+    <h1>Please check your input for profanity and try again.</h1>
+{% endif %}
+{% if empty == True %}
+    <h1>We're sorry, your input is too short. Please try again.</h1>
+{% endif %}
+{% if long == True %}
+    <h1>We're sorry, your input is too long. Please try again.</h1>
+{% endif %}
+{% if wait == True %}
+    <h1>You may only submit once every 10 minutes. Please wait and try again.</h1>
+{% endif %}
+
+
     <div class = 'event-description-input' style="text-align:center;">
 
         <input id="food-duration-input" type = "text" name="food-duration-input" placeholder = "How long will this event last? (1-4 hours)" align="middle"><br>
