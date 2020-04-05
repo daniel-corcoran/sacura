@@ -14,65 +14,42 @@ h1 {
 }
 
 
-@media only screen and (min-width: 500px) {
-    /* styles for wide screens */
+@media only screen and (min-width: 550px) {
     /* styles for MacBook Pro-sized screens and larger */
     .logo-container {
-    text-align: center;
-    align-content: center;
-    height: 250px;
+        text-align:         center;
+        align-content:      center;
+        height:             150px;
     }
     .logo-container img{
-    width: 50%;
-    max-width: 100%;
-    }
-    .post-container {
-    text-align: center;
-    align-content: center;
-    height: 200px;
-    }
-    .post-container img{
-
+        width:              550px;
     }
     .event-container{
-        text-align: center;
-        align-content: center;
-        width: auto;
-        height: 100px;
+        text-align:         center;
+        align-content:      center;
     }
     .event-container img{
-    height: 100%
+        width:              450px;
     }
-
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
     /* styles for narrow screens */
+
+    /* Details for drawing sacura logo. */
     .logo-container {
-    text-align: center;
-    align-content: center;
-    max-height: 300px;
+        text-align:         center;
+        align-content:      center;
     }
     .logo-container img{
-    width: 75%;
-    max-width: 100%;
-    }
-        .post-container {
-    text-align: center;
-    align-content: center;
-    height: 200px;
-    }
-    .post-container img{
-
+        width:              100%; /*stretch to fit entire width of screen.*/
     }
     .event-container{
-        text-align: center;
-        align-content: center;
-        width: auto;
-        height: 150px;
+        text-align:         center;
+        align-content:      center;
     }
     .event-container img{
-    height: 100%
+        width:              100%
     }
 }
 

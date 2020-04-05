@@ -3,14 +3,16 @@
 
 <form action = "/process_request" method = "post" enctype="multipart/form-data">
 
-    <div class = 'food-description-input' style="text-align:center;">
-        <input id="food-description-input" type = "text" name="food-description-input" placeholder = "What sort of food?" align="middle"><br>
-    </div>
-    <div class = 'prot-name-input' style="text-align:center;">
-        <input id="prot-name-input" type = "text" name="location-description-input" placeholder = "Where is it located?" align="middle"><br>
-    </div>
-    <div class = 'submit-button' align="middle">
+    <div class = 'event-description-input' style="text-align:center;">
+
+        <input id="food-duration-input" type = "text" name="food-duration-input" placeholder = "How long will this event last? (1-4 hours)" align="middle"><br>
+
+        <input id="food-location-input" type = "text" name="food-location-input" placeholder = "How can guests find it?" align="middle"><br>
+
+        <input id="food-activity-input" type = "text" name="food-activity-input" placeholder = "What food and activities are there? "><br>
+
         <input type="hidden" id="token" name="token" value="{{usertoken}}">
+
         <input id="submit" type = "submit" value="Submit food report"><br>
     </div>
 
