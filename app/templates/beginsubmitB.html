@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {%block home_container%}
 
+
+
+
 <form action = "/process_request" method = "post" enctype="multipart/form-data">
 
 {% if time == True %}
@@ -21,17 +24,38 @@
 
 
     <div class = 'event-description-input' style="text-align:center;">
+        <br>
+        <input id="food-activity-input" type = "text" name="food-activity-input" placeholder = "What food and activities are there? "><br><br>
 
-        <input id="food-duration-input" type = "text" name="food-duration-input" placeholder = "How long will this event last? (1-4 hours)" align="middle"><br>
+        <hr><br>
+        <input id="food-location-input" type = "text" name="food-location-input" placeholder = "How can guests find it?" align="middle"><br><br>
 
-        <input id="food-location-input" type = "text" name="food-location-input" placeholder = "How can guests find it?" align="middle"><br>
 
-        <input id="food-activity-input" type = "text" name="food-activity-input" placeholder = "What food and activities are there? "><br>
+        <hr>
+        <h3>How long will this event last?</h3>
+        <div class="slidecontainer" style="text-align:center;">
+            <input type="range" min="1" max="4" value="2" class="slider" id="food-duration-input" name="food-duration-input">
+        </div>
+        <h3><span id="food-duration-feedback"></span> hours</h3>
+        <hr>
 
         <input type="hidden" id="token" name="token" value="{{usertoken}}">
+        <br>
 
-        <input id="submit" type = "submit" value="Submit food report"><br>
+        <button type = "submit" value="Submit food report" style="border: 0; background: transparent">
+            <img src="static/web_asset/image/submit.png">
+        </button>
+
     </div>
 
 </form>
+
+    <script>
+        var slider = document.getElementById("food-duration-input");
+        var output = document.getElementById("food-duration-feedback");
+        output.innerHTML = slider.value;
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+    </script>
 {% endblock %}

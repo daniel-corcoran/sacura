@@ -97,7 +97,8 @@ def sanitize_strings(food_location, food_activity, food_duration):
     empty = False  # Are any strings empty?  < 10 chars
     long = False  # Are any strings > 128 chars
 
-    max_field_len = 50  # How long can a field be?
+    max_activity_len = 100  # How long can a field be?
+    max_location_len = 50
     min_activity_len = 10  # How short can a description be?
     min_location_len = 5  # How short can location description be?
 
@@ -121,7 +122,7 @@ def sanitize_strings(food_location, food_activity, food_duration):
         print("<script> tag detected in input.")
         profanity = True
 
-    if len(food_activity) > max_field_len or len(food_location) > max_field_len:
+    if len(food_activity) > max_activity_len or len(food_location) > max_location_len:
         long = True
 
     if len(food_activity) < min_activity_len or len(food_location) < min_location_len:
