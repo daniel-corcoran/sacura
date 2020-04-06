@@ -207,6 +207,7 @@ def begin_submit():
 def home_page(not_free=False):
     user_ip_address = request.environ['REMOTE_ADDR']
     print(user_ip_address)
+
     if user_ip_address == '127.0.0.1':
         bypass = True
     else:
@@ -226,9 +227,10 @@ if __name__ == '__main__':
     print("Server program has begin. Beginning service.")
     try:
         print("Attempting to open on port 80")
-        serve(app, host='0.0.0.0', port=80)
+        app.run()
+        #serve(app, host='0.0.0.0', port=80, ssl_context='adhoc')
     except Exception as e:
         print(e)
         print("Unsuccessful. Attempting on port 8000")
-        serve(app, host='0.0.0.0', port=8000)
+        serve(app, host='0.0.0.0', port=8000, ssl_context='adhoc')
     print("Main sequence closed. The program has ended.")
